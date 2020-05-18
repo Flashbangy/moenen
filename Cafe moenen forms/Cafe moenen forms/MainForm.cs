@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cafe_moenen_forms
 {
-    public partial class UserControl1: UserControl
+    public partial class MainForm: UserControl
     {
-        public UserControl1()
+        public MainForm()
         {
             InitializeComponent();
         }

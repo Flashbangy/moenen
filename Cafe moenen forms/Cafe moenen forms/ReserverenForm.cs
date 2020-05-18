@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Cafe_moenen_forms
 {
-    public partial class UserControl2 : UserControl
+    public partial class ReserverenForm : UserControl
     {
-        public UserControl2()
+        public ReserverenForm()
         {
             InitializeComponent();
+        }
+
+        private void UserControl2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
