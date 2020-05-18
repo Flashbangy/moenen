@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Reserveren_restaurant_Moenen
+namespace Cafe_moenen_forms
 {
     class Restaurant
     {
