@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -34,7 +34,7 @@ namespace Reserveren_restaurant_Moenen
             int tafelsBezet = 0;
             foreach (Reserveren reserveringen in reserveringen)
             {
-                if(reserveringen.Tijd == tijdKeuze && reserveringen.Binnen == binnenBuiten)
+                if (reserveringen.Tijd == tijdKeuze && reserveringen.Binnen == binnenBuiten)
                 {
                     tafelsBezet += 1;
                 }
@@ -48,11 +48,12 @@ namespace Reserveren_restaurant_Moenen
             if (binnenBuiten)
             {
                 return Binnentafels - tafelsBezetBinnen;
-            } else
+            }
+            else
             {
                 return Buitentafels - tafelsBezetBuiten;
             }
-        } 
+        }
 
         //Geeft terug hoeveel tafels er vrij zijn en dus of je kunt reserveren.
 
@@ -65,18 +66,21 @@ namespace Reserveren_restaurant_Moenen
                 {
                     tafelsBezetBinnen += Convert.ToInt32(aantalTafelsNodig);
                     return true;
-                    
-                } else //als het niet kan
+
+                }
+                else //als het niet kan
                 {
                     return false;
                 }
-            } else
+            }
+            else
             {
                 if (aantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
                 {
-                    tafelsBezetBuiten += Convert.ToInt32(aantalTafelsNodig); 
+                    tafelsBezetBuiten += Convert.ToInt32(aantalTafelsNodig);
                     return true;
-                } else
+                }
+                else
                 {
                     return false;
                 }
@@ -86,15 +90,18 @@ namespace Reserveren_restaurant_Moenen
         public bool tiendeReservering()
         {
             int aantalReserveringen = 0;
-            foreach (Reserveren reserveringen in reserveringen)
+            return (reserveringen.Count % 10 == 0);
+
+            foreach (Reserveren reservering in reserveringen)
             {
                 aantalReserveringen += 1;
             }
 
-            if(aantalReserveringen == 10)
+            if (reserveringen.Count == 10)
             {
                 return true;
-            } else
+            }
+            else
             {
                 return false;
             }
