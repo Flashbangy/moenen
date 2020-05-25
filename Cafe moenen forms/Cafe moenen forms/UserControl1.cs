@@ -13,6 +13,7 @@ namespace Cafe_moenen_forms
     public partial class UserControl1: UserControl
     {
         
+        
         public UserControl1()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Cafe_moenen_forms
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace Cafe_moenen_forms
         private void Reserveer_click(object sender, EventArgs e)
         {
             string i = "hoi";
-            label1.Text = i;
+            listBox1.Text = i;
         }
 
     }
