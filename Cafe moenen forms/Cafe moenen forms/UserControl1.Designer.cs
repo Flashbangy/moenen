@@ -30,8 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.AantalMensen = new System.Windows.Forms.TextBox();
+            this.Box1 = new System.Windows.Forms.ListBox();
             this.Reserveer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,6 +41,12 @@
             this.tijdKeuze = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.AantalMensen = new System.Windows.Forms.NumericUpDown();
+            this.NameInput = new System.Windows.Forms.TextBox();
+            this.TelefoonNummer = new System.Windows.Forms.TextBox();
+            this.Naam = new System.Windows.Forms.Label();
+            this.Telefoon = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.AantalMensen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,22 +71,15 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // listBox1
+            // Box1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(433, 152);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(159, 116);
-            this.listBox1.TabIndex = 2;
-            // 
-            // AantalMensen
-            // 
-            this.AantalMensen.Location = new System.Drawing.Point(30, 246);
-            this.AantalMensen.Name = "AantalMensen";
-            this.AantalMensen.Size = new System.Drawing.Size(100, 22);
-            this.AantalMensen.TabIndex = 5;
+            this.Box1.FormattingEnabled = true;
+            this.Box1.ItemHeight = 16;
+            this.Box1.Location = new System.Drawing.Point(433, 152);
+            this.Box1.Margin = new System.Windows.Forms.Padding(4);
+            this.Box1.Name = "Box1";
+            this.Box1.Size = new System.Drawing.Size(159, 116);
+            this.Box1.TabIndex = 2;
             // 
             // Reserveer
             // 
@@ -151,11 +149,11 @@
             // 
             this.tijdKeuze.FormattingEnabled = true;
             this.tijdKeuze.Items.AddRange(new object[] {
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00"});
+            "17",
+            "18",
+            "19",
+            "29",
+            "21"});
             this.tijdKeuze.Location = new System.Drawing.Point(30, 306);
             this.tijdKeuze.Name = "tijdKeuze";
             this.tijdKeuze.Size = new System.Drawing.Size(121, 24);
@@ -183,10 +181,55 @@
             this.radioButton2.Text = "Binnen";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // AantalMensen
+            // 
+            this.AantalMensen.Location = new System.Drawing.Point(31, 246);
+            this.AantalMensen.Name = "AantalMensen";
+            this.AantalMensen.Size = new System.Drawing.Size(120, 22);
+            this.AantalMensen.TabIndex = 18;
+            // 
+            // NameInput
+            // 
+            this.NameInput.Location = new System.Drawing.Point(30, 365);
+            this.NameInput.Name = "NameInput";
+            this.NameInput.Size = new System.Drawing.Size(100, 22);
+            this.NameInput.TabIndex = 19;
+            // 
+            // TelefoonNummer
+            // 
+            this.TelefoonNummer.Location = new System.Drawing.Point(34, 423);
+            this.TelefoonNummer.Name = "TelefoonNummer";
+            this.TelefoonNummer.Size = new System.Drawing.Size(100, 22);
+            this.TelefoonNummer.TabIndex = 20;
+            // 
+            // Naam
+            // 
+            this.Naam.AutoSize = true;
+            this.Naam.Location = new System.Drawing.Point(31, 345);
+            this.Naam.Name = "Naam";
+            this.Naam.Size = new System.Drawing.Size(45, 17);
+            this.Naam.TabIndex = 21;
+            this.Naam.Text = "Naam";
+            this.Naam.Click += new System.EventHandler(this.Naam_Click);
+            // 
+            // Telefoon
+            // 
+            this.Telefoon.AutoSize = true;
+            this.Telefoon.Location = new System.Drawing.Point(31, 403);
+            this.Telefoon.Name = "Telefoon";
+            this.Telefoon.Size = new System.Drawing.Size(119, 17);
+            this.Telefoon.TabIndex = 22;
+            this.Telefoon.Text = "Telefoon nummer";
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Telefoon);
+            this.Controls.Add(this.Naam);
+            this.Controls.Add(this.TelefoonNummer);
+            this.Controls.Add(this.NameInput);
+            this.Controls.Add(this.AantalMensen);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.tijdKeuze);
@@ -197,14 +240,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Reserveer);
-            this.Controls.Add(this.AantalMensen);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.Box1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(903, 518);
             this.Load += new System.EventHandler(this.UserControl1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.AantalMensen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,8 +257,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox AantalMensen;
+        private System.Windows.Forms.ListBox Box1;
         private System.Windows.Forms.Button Reserveer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -226,5 +268,10 @@
         private System.Windows.Forms.ComboBox tijdKeuze;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.NumericUpDown AantalMensen;
+        private System.Windows.Forms.TextBox NameInput;
+        private System.Windows.Forms.TextBox TelefoonNummer;
+        private System.Windows.Forms.Label Naam;
+        private System.Windows.Forms.Label Telefoon;
     }
 }

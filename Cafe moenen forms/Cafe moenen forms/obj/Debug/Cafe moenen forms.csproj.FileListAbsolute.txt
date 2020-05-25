@@ -13,3 +13,10 @@ D:\Schooljaar 2\C#\Cafe moenen forms\Cafe moenen forms\obj\Debug\Cafe moenen for
 D:\Schooljaar 2\C#\Cafe moenen forms\Cafe moenen forms\obj\Debug\Cafe moenen forms.pdb
 D:\Schooljaar 2\C#\Cafe moenen forms\Cafe moenen forms\bin\Debug\Cafe moenen forms.dll
 D:\Schooljaar 2\C#\Cafe moenen forms\Cafe moenen forms\bin\Debug\Cafe moenen forms.pdb
+C:\Users\yanni\Documents\GitHub\moenen\Cafe moenen forms\Cafe moenen forms\bin\Debug\Cafe moenen forms.dll
+C:\Users\yanni\Documents\GitHub\moenen\Cafe moenen forms\Cafe moenen forms\bin\Debug\Cafe moenen forms.pdb
+C:\Users\yanni\Documents\GitHub\moenen\Cafe moenen forms\Cafe moenen forms\obj\Debug\Cafe moenen forms.csprojAssemblyReference.cache
+C:\Users\yanni\Documents\GitHub\moenen\Cafe moenen forms\Cafe moenen forms\obj\Debug\Cafe_moenen_forms.UserControl1.resources
+C:\Users\yanni\Documents\GitHub\moenen\Cafe moenen forms\Cafe moenen forms\obj\Debug\Cafe moenen forms.csproj.GenerateResource.cache
+C:\Users\yanni\Documents\GitHub\moenen\Cafe moenen forms\Cafe moenen forms\obj\Debug\Cafe moenen forms.dll
+C:\Users\yanni\Documents\GitHub\moenen\Cafe moenen forms\Cafe moenen forms\obj\Debug\Cafe moenen forms.pdb

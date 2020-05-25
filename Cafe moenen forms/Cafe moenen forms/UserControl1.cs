@@ -12,8 +12,9 @@ namespace Cafe_moenen_forms
 {
     public partial class UserControl1: UserControl
     {
-        
-        
+        Restaurant restaurant = new Restaurant();
+        ReserverenForms reserveren1 = new ReserverenForms(17, true, 6, "proce", 0612345678);
+             
         public UserControl1()
         {
             InitializeComponent();
@@ -42,9 +43,14 @@ namespace Cafe_moenen_forms
 
         private void Reserveer_click(object sender, EventArgs e)
         {
-            string i = "hoi";
-            listBox1.Text = i;
+            int aantalMensen = Convert.ToInt32(AantalMensen.Text);
+            int tijd = int.Parse(tijdKeuze.Text);
+            Box1.Items.Add(tijdKeuze);
         }
 
+        private void Naam_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
