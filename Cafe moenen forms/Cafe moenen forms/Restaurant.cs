@@ -1,6 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Cafe_moenen_forms
 {
@@ -12,7 +14,7 @@ namespace Cafe_moenen_forms
 
         public int Buitentafels { get; set; } = 30;
 
-        public List<Reserveren> reserveringen = new List<Reserveren>();
+        public List<ReserverenForms> reserveringen = new List<ReserverenForms>();
 
         public int aantalTafelsVrij { get; set; } = 0;
 
@@ -32,7 +34,7 @@ namespace Cafe_moenen_forms
         public int AantalTafelsBezet(bool binnenBuiten, int tijdKeuze)
         {
             int tafelsBezet = 0;
-            foreach (Reserveren reserveringen in reserveringen)
+            foreach (ReserverenForms reserveringen in reserveringen)
             {
                 if (reserveringen.Tijd == tijdKeuze && reserveringen.Binnen == binnenBuiten)
                 {
@@ -92,7 +94,7 @@ namespace Cafe_moenen_forms
             int aantalReserveringen = 0;
             return (reserveringen.Count % 10 == 0);
 
-            foreach (Reserveren reservering in reserveringen)
+            foreach (ReserverenForms reservering in reserveringen)
             {
                 aantalReserveringen += 1;
             }
