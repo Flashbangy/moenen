@@ -64,7 +64,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(489, 332);
+            this.textBox1.Location = new System.Drawing.Point(433, 308);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
@@ -80,6 +80,7 @@
             this.Box1.Name = "Box1";
             this.Box1.Size = new System.Drawing.Size(159, 116);
             this.Box1.TabIndex = 2;
+            this.Box1.SelectedIndexChanged += new System.EventHandler(this.Box1_SelectedIndexChanged);
             // 
             // Reserveer
             // 
@@ -89,6 +90,7 @@
             this.Reserveer.TabIndex = 6;
             this.Reserveer.Text = "Reserveren";
             this.Reserveer.UseVisualStyleBackColor = true;
+            this.Reserveer.Click += new System.EventHandler(this.Reserveer_Click_1);
             // 
             // label3
             // 
@@ -144,6 +146,7 @@
             this.label6.Size = new System.Drawing.Size(57, 17);
             this.label6.TabIndex = 14;
             this.label6.Text = "melding";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tijdKeuze
             // 
@@ -158,6 +161,7 @@
             this.tijdKeuze.Name = "tijdKeuze";
             this.tijdKeuze.Size = new System.Drawing.Size(121, 24);
             this.tijdKeuze.TabIndex = 15;
+            this.tijdKeuze.SelectedIndexChanged += new System.EventHandler(this.tijdKeuze_SelectedIndexChanged);
             // 
             // radioButton1
             // 
@@ -169,6 +173,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Buiten";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -180,6 +185,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Binnen";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // AantalMensen
             // 
@@ -187,6 +193,7 @@
             this.AantalMensen.Name = "AantalMensen";
             this.AantalMensen.Size = new System.Drawing.Size(120, 22);
             this.AantalMensen.TabIndex = 18;
+            this.AantalMensen.ValueChanged += new System.EventHandler(this.AantalMensen_ValueChanged);
             // 
             // NameInput
             // 
@@ -201,6 +208,7 @@
             this.TelefoonNummer.Name = "TelefoonNummer";
             this.TelefoonNummer.Size = new System.Drawing.Size(100, 22);
             this.TelefoonNummer.TabIndex = 20;
+            this.TelefoonNummer.TextChanged += new System.EventHandler(this.TelefoonNummer_TextChanged);
             // 
             // Naam
             // 
