@@ -46,6 +46,11 @@
             this.TelefoonNummer = new System.Windows.Forms.TextBox();
             this.Naam = new System.Windows.Forms.Label();
             this.Telefoon = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AantalMensen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +69,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(433, 308);
+            this.textBox1.Location = new System.Drawing.Point(515, 311);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
@@ -75,10 +80,10 @@
             // 
             this.Box1.FormattingEnabled = true;
             this.Box1.ItemHeight = 16;
-            this.Box1.Location = new System.Drawing.Point(433, 152);
+            this.Box1.Location = new System.Drawing.Point(433, 107);
             this.Box1.Margin = new System.Windows.Forms.Padding(4);
             this.Box1.Name = "Box1";
-            this.Box1.Size = new System.Drawing.Size(159, 116);
+            this.Box1.Size = new System.Drawing.Size(445, 196);
             this.Box1.TabIndex = 2;
             this.Box1.SelectedIndexChanged += new System.EventHandler(this.Box1_SelectedIndexChanged);
             // 
@@ -155,7 +160,7 @@
             "17",
             "18",
             "19",
-            "29",
+            "20",
             "21"});
             this.tijdKeuze.Location = new System.Drawing.Point(30, 306);
             this.tijdKeuze.Name = "tijdKeuze";
@@ -229,10 +234,70 @@
             this.Telefoon.TabIndex = 22;
             this.Telefoon.Text = "Telefoon nummer";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(199, 26);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Hoeveel tafels beschikbaar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(149, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(201, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "label7";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "17",
+            "18",
+            "19",
+            "20",
+            "21"});
+            this.comboBox1.Location = new System.Drawing.Point(22, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 26;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(433, 310);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Telefoon);
             this.Controls.Add(this.Naam);
             this.Controls.Add(this.TelefoonNummer);
@@ -281,5 +346,10 @@
         private System.Windows.Forms.TextBox TelefoonNummer;
         private System.Windows.Forms.Label Naam;
         private System.Windows.Forms.Label Telefoon;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

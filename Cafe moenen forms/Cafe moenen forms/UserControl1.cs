@@ -20,6 +20,8 @@ namespace Cafe_moenen_forms
         public UserControl1()
         {
             InitializeComponent();
+            Box1.DataSource = restaurant.reserveringen;
+            restaurant.reserveringen.Add(new ReserverenForms(17, true, 10, "test", 0612345678));
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -53,6 +55,7 @@ namespace Cafe_moenen_forms
             
         }
 
+        //dit is de functie die reserveerd
         private void Reserveer_Click_1(object sender, EventArgs e)
         {
             decimal personen = AantalMensen.Value;
@@ -79,6 +82,7 @@ namespace Cafe_moenen_forms
             {
                 label6.Text = "U kunt helaas niet reserveren";
             }
+            //DataSource = MyList;
         }
 
         private void AantalMensen_ValueChanged(object sender, EventArgs e)
@@ -108,7 +112,47 @@ namespace Cafe_moenen_forms
 
         private void Box1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //foreach (Reserveren reservering in reserveringen)
+            //{
+            //aantalReserveringen += 1;
+            //}
+        }
 
+
+        //hieronder staan de functies die checken hoeveel tafels er beschikbaar zijn
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string testTijd = comboBox1.Text;
+            Int32.TryParse(testTijd, out int checkTijd);
+
+            bool binnenBuitenCheck = true;
+            int binnenTafels = restaurant.aantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            label2.Text = binnenTafels.ToString();
+
+            binnenBuitenCheck = false;
+            int buitenTafels = restaurant.aantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            label7.Text = buitenTafels.ToString();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Box1.DataSource = restaurant.reserveringen;
         }
     }
 }
