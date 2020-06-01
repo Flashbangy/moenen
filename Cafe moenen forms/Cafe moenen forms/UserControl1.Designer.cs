@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Box1 = new System.Windows.Forms.ListBox();
             this.Reserveer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +49,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Tijd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Binnen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Personen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.persoonNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nummer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Box1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.AantalMensen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,26 +72,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Restaurant Moenen";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(515, 311);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // Box1
-            // 
-            this.Box1.FormattingEnabled = true;
-            this.Box1.ItemHeight = 16;
-            this.Box1.Location = new System.Drawing.Point(433, 107);
-            this.Box1.Margin = new System.Windows.Forms.Padding(4);
-            this.Box1.Name = "Box1";
-            this.Box1.Size = new System.Drawing.Size(445, 196);
-            this.Box1.TabIndex = 2;
-            this.Box1.SelectedIndexChanged += new System.EventHandler(this.Box1_SelectedIndexChanged);
             // 
             // Reserveer
             // 
@@ -281,7 +267,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(433, 310);
+            this.button2.Location = new System.Drawing.Point(394, 285);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 27;
@@ -289,10 +275,79 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "17",
+            "18",
+            "19",
+            "20",
+            "21"});
+            this.comboBox2.Location = new System.Drawing.Point(486, 285);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 28;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Tijd,
+            this.Binnen,
+            this.Personen,
+            this.persoonNaam,
+            this.Nummer});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(323, 69);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(565, 199);
+            this.listView1.TabIndex = 29;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // Tijd
+            // 
+            this.Tijd.Text = "Tijd";
+            this.Tijd.Width = 40;
+            // 
+            // Binnen
+            // 
+            this.Binnen.Text = "Binnen";
+            this.Binnen.Width = 40;
+            // 
+            // Personen
+            // 
+            this.Personen.Text = "Personen";
+            this.Personen.Width = 40;
+            // 
+            // persoonNaam
+            // 
+            this.persoonNaam.Text = "persoonNaam";
+            this.persoonNaam.Width = 40;
+            // 
+            // Nummer
+            // 
+            this.Nummer.Text = "Nummer";
+            this.Nummer.Width = 40;
+            // 
+            // Box1
+            // 
+            this.Box1.FormattingEnabled = true;
+            this.Box1.ItemHeight = 16;
+            this.Box1.Location = new System.Drawing.Point(873, 275);
+            this.Box1.Margin = new System.Windows.Forms.Padding(4);
+            this.Box1.Name = "Box1";
+            this.Box1.Size = new System.Drawing.Size(15, 4);
+            this.Box1.TabIndex = 2;
+            this.Box1.SelectedIndexChanged += new System.EventHandler(this.Box1_SelectedIndexChanged);
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
@@ -314,7 +369,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Reserveer);
             this.Controls.Add(this.Box1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl1";
@@ -329,8 +383,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox Box1;
         private System.Windows.Forms.Button Reserveer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -351,5 +403,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Tijd;
+        private System.Windows.Forms.ColumnHeader Binnen;
+        private System.Windows.Forms.ColumnHeader Personen;
+        private System.Windows.Forms.ColumnHeader persoonNaam;
+        private System.Windows.Forms.ColumnHeader Nummer;
+        private System.Windows.Forms.ListBox Box1;
     }
 }

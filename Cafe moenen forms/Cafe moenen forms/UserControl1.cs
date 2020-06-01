@@ -31,8 +31,8 @@ namespace Cafe_moenen_forms
 
         private void label1_Click(object sender, EventArgs e)
         {
-            label1.Text = textBox1.Text;
-            textBox1.BackColor = Color.FromName("LightBlue");
+            //label1.Text = textBox1.Text;
+            //textBox1.BackColor = Color.FromName("LightBlue");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -82,6 +82,7 @@ namespace Cafe_moenen_forms
             {
                 label6.Text = "U kunt helaas niet reserveren";
             }
+            
             //DataSource = MyList;
         }
 
@@ -152,7 +153,202 @@ namespace Cafe_moenen_forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Box1.DataSource = restaurant.reserveringen;
+            //this.listView1.DataSource = null;
+            this.listView1.Items.Clear();
+
+            string checkTijd = comboBox2.Text;
+            Int32.TryParse(checkTijd, out int ckeckedTijd);
+            if (ckeckedTijd == 17)
+            {
+                int geldiger = 17;
+                List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
+                foreach (ReserverenForms p in reserveringen)
+                {
+                    ListViewItem tijd = new ListViewItem(p.Tijd.ToString());
+                    ListViewItem binnen = new ListViewItem(p.Binnen.ToString());
+                    ListViewItem personen = new ListViewItem(p.AantalPers.ToString());
+                    ListViewItem naam = new ListViewItem(p.GroepNaam);
+                    ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
+                    ListViewItem geldig = new ListViewItem(geldiger.ToString());
+
+                    if (tijd == geldig)
+                    {
+
+                        //item.SubItems.Add(p.Binnen.ToString());
+                        //item.SubItems.Add(p.AantalPers.ToString());
+                        //item.SubItems.Add(p.GroepNaam);
+                        //item.SubItems.Add(p.TelefoonNummer.ToString());
+                        listView1.Items.Add(tijd);
+                        listView1.Items.Add(binnen);
+                        listView1.Items.Add(personen);
+                        listView1.Items.Add(naam);
+                        listView1.Items.Add(telefoonnummer);
+                        Console.WriteLine(tijd);
+                        Console.WriteLine(geldig);
+                    }
+                }
+
+
+
+
+
+
+                //Box1.Items.Add(restaurant.reserveringen);
+                //Box1.DataSource = restaurant.reserveringen;
+                //restaurant.reserveringen.Add(new ReserverenForms() { Tijd = Int32.TryParse() });
+                //Box1.Text = restaurant.reserveringen;
+            //});
+                //Box1.DisplayMember = "tijdkeuze";
+
+                //string.Join(", ", restaurant.reserveringen);
+                //listView1.Items.Add(restaurant.reserveringen.ToString());
+            } else if (ckeckedTijd == 18)
+            {
+                int geldiger = 18;
+                List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
+                foreach (ReserverenForms p in reserveringen)
+                {
+                    ListViewItem tijd = new ListViewItem(p.Tijd.ToString());
+                    ListViewItem binnen = new ListViewItem(p.Binnen.ToString());
+                    ListViewItem personen = new ListViewItem(p.AantalPers.ToString());
+                    ListViewItem naam = new ListViewItem(p.GroepNaam);
+                    ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
+                    ListViewItem geldig = new ListViewItem(geldiger.ToString());
+
+                    if (tijd == geldig)
+                    {
+
+                        //item.SubItems.Add(p.Binnen.ToString());
+                        //item.SubItems.Add(p.AantalPers.ToString())
+                        //item.SubItems.Add(p.GroepNaam);
+                        //item.SubItems.Add(p.TelefoonNummer.ToString());
+                        listView1.Items.Add(tijd);
+                        listView1.Items.Add(binnen);
+                        listView1.Items.Add(personen);
+                        listView1.Items.Add(naam);
+                        listView1.Items.Add(telefoonnummer);
+                        Console.WriteLine(tijd);
+                        Console.WriteLine(geldig);
+                    }
+                }
+
+            } else if (ckeckedTijd == 19)
+            {
+                int geldiger = 19;
+                List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
+                foreach (ReserverenForms p in reserveringen)
+                {
+                    ListViewItem tijd = new ListViewItem(p.Tijd.ToString());
+                    ListViewItem binnen = new ListViewItem(p.Binnen.ToString());
+                    ListViewItem personen = new ListViewItem(p.AantalPers.ToString());
+                    ListViewItem naam = new ListViewItem(p.GroepNaam);
+                    ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
+                    ListViewItem geldig = new ListViewItem(geldiger.ToString());
+
+                    if (tijd == geldig)
+                    {
+
+                        //item.SubItems.Add(p.Binnen.ToString());
+                        //item.SubItems.Add(p.AantalPers.ToString());
+                        //item.SubItems.Add(p.GroepNaam);
+                        //item.SubItems.Add(p.TelefoonNummer.ToString());
+                        listView1.Items.Add(tijd);
+                        listView1.Items.Add(binnen);
+                        listView1.Items.Add(personen);
+                        listView1.Items.Add(naam);
+                        listView1.Items.Add(telefoonnummer);
+                        Console.WriteLine(tijd);
+                        Console.WriteLine(geldig);
+                    }
+                }
+
+            } else if (ckeckedTijd == 20)
+            {
+                int geldiger = 20;
+                List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
+                foreach (ReserverenForms p in reserveringen)
+                {
+                    ListViewItem tijd = new ListViewItem(p.Tijd.ToString());
+                    ListViewItem binnen = new ListViewItem(p.Binnen.ToString());
+                    ListViewItem personen = new ListViewItem(p.AantalPers.ToString());
+                    ListViewItem naam = new ListViewItem(p.GroepNaam);
+                    ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
+                    ListViewItem geldig = new ListViewItem(geldiger.ToString());
+
+                    if (tijd == geldig)
+                    {
+
+                        //item.SubItems.Add(p.Binnen.ToString());
+                        //item.SubItems.Add(p.AantalPers.ToString());
+                        //item.SubItems.Add(p.GroepNaam);
+                        //item.SubItems.Add(p.TelefoonNummer.ToString());
+                        listView1.Items.Add(tijd);
+                        listView1.Items.Add(binnen);
+                        listView1.Items.Add(personen);
+                        listView1.Items.Add(naam);
+                        listView1.Items.Add(telefoonnummer);
+                        Console.WriteLine(tijd);
+                        Console.WriteLine(geldig);
+                    }
+                }
+
+            } else
+            {
+                int geldiger = 21;
+                List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
+                foreach (ReserverenForms p in reserveringen)
+                {
+                    ListViewItem tijd = new ListViewItem(p.Tijd.ToString());
+                    ListViewItem binnen = new ListViewItem(p.Binnen.ToString());
+                    ListViewItem personen = new ListViewItem(p.AantalPers.ToString());
+                    ListViewItem naam = new ListViewItem(p.GroepNaam);
+                    ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
+                    ListViewItem geldig = new ListViewItem(geldiger.ToString());
+
+                    if (tijd == geldig)
+                    {
+
+                        //item.SubItems.Add(p.Binnen.ToString());
+                        //item.SubItems.Add(p.AantalPers.ToString());
+                        //item.SubItems.Add(p.GroepNaam);
+                        //item.SubItems.Add(p.TelefoonNummer.ToString());
+                        listView1.Items.Add(tijd);
+                        listView1.Items.Add(binnen);
+                        listView1.Items.Add(personen);
+                        listView1.Items.Add(naam);
+                        listView1.Items.Add(telefoonnummer);
+                        Console.WriteLine(tijd);
+                        Console.WriteLine(geldig);
+                    }
+                }
+
+            }
+            //Box1.DataSource = restaurant.reserveringen;
+            //Box1.DataBindings;
+            //foreach (var n in restaurant.reserveringen.Skip(restaurant.reserveringen.IndexOf(textBox1))) {
+                //Box1.Items.AddRange(restaurant.reserveringen.ToArray());
+                //Box1.DataSource = restaurant.reserveringen;
+                //Box1.DataSource = n;
+
+            //}
+
+
+
+
+            //foreach(x = 1; x <= 50; x++)
+            //{
+            //Box1.Items.Add("Item " + x.ToString());
+           // }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
