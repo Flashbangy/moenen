@@ -123,6 +123,8 @@ namespace Cafe_moenen_forms
         //hieronder staan de functies die checken hoeveel tafels er beschikbaar zijn
         private void button1_Click(object sender, EventArgs e)
         {
+            label2.Text = "0";
+            label7.Text = "0";
             string testTijd = comboBox1.Text;
             Int32.TryParse(testTijd, out int checkTijd);
 
@@ -171,7 +173,7 @@ namespace Cafe_moenen_forms
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
 
-                    if (tijd == geldig)
+                    if (tijd.ToString() == geldig.ToString())
                     {
 
                         //item.SubItems.Add(p.Binnen.ToString());
@@ -183,8 +185,6 @@ namespace Cafe_moenen_forms
                         listView1.Items.Add(personen);
                         listView1.Items.Add(naam);
                         listView1.Items.Add(telefoonnummer);
-                        Console.WriteLine(tijd);
-                        Console.WriteLine(geldig);
                     }
                 }
 
@@ -215,11 +215,11 @@ namespace Cafe_moenen_forms
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
 
-                    if (tijd == geldig)
+                    if (tijd.ToString() == geldig.ToString())
                     {
 
                         //item.SubItems.Add(p.Binnen.ToString());
-                        //item.SubItems.Add(p.AantalPers.ToString())
+                        //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
                         listView1.Items.Add(tijd);
@@ -227,8 +227,6 @@ namespace Cafe_moenen_forms
                         listView1.Items.Add(personen);
                         listView1.Items.Add(naam);
                         listView1.Items.Add(telefoonnummer);
-                        Console.WriteLine(tijd);
-                        Console.WriteLine(geldig);
                     }
                 }
 
@@ -245,7 +243,7 @@ namespace Cafe_moenen_forms
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
 
-                    if (tijd == geldig)
+                    if (tijd.ToString() == geldig.ToString())
                     {
 
                         //item.SubItems.Add(p.Binnen.ToString());
@@ -257,8 +255,6 @@ namespace Cafe_moenen_forms
                         listView1.Items.Add(personen);
                         listView1.Items.Add(naam);
                         listView1.Items.Add(telefoonnummer);
-                        Console.WriteLine(tijd);
-                        Console.WriteLine(geldig);
                     }
                 }
 
@@ -275,7 +271,7 @@ namespace Cafe_moenen_forms
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
 
-                    if (tijd == geldig)
+                    if (tijd.ToString() == geldig.ToString())
                     {
 
                         //item.SubItems.Add(p.Binnen.ToString());
@@ -287,8 +283,6 @@ namespace Cafe_moenen_forms
                         listView1.Items.Add(personen);
                         listView1.Items.Add(naam);
                         listView1.Items.Add(telefoonnummer);
-                        Console.WriteLine(tijd);
-                        Console.WriteLine(geldig);
                     }
                 }
 
@@ -305,7 +299,7 @@ namespace Cafe_moenen_forms
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
 
-                    if (tijd == geldig)
+                    if (tijd.ToString() == geldig.ToString())
                     {
 
                         //item.SubItems.Add(p.Binnen.ToString());
@@ -317,8 +311,6 @@ namespace Cafe_moenen_forms
                         listView1.Items.Add(personen);
                         listView1.Items.Add(naam);
                         listView1.Items.Add(telefoonnummer);
-                        Console.WriteLine(tijd);
-                        Console.WriteLine(geldig);
                     }
                 }
 

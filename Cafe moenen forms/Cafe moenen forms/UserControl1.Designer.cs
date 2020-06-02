@@ -235,9 +235,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(149, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 24;
-            this.label2.Text = "label2";
+            this.label2.Text = "binnen";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label7
@@ -245,9 +245,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(201, 62);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.Size = new System.Drawing.Size(47, 17);
             this.label7.TabIndex = 25;
-            this.label7.Text = "label7";
+            this.label7.Text = "buiten";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // comboBox1
