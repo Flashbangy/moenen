@@ -141,6 +141,7 @@
             // 
             // tijdKeuze
             // 
+            this.tijdKeuze.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tijdKeuze.FormattingEnabled = true;
             this.tijdKeuze.Items.AddRange(new object[] {
             "17",
@@ -252,6 +253,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "17",
@@ -267,16 +269,17 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(394, 285);
+            this.button2.Location = new System.Drawing.Point(537, 286);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 27;
-            this.button2.Text = "button2";
+            this.button2.Text = "Toon";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "17",
@@ -284,7 +287,7 @@
             "19",
             "20",
             "21"});
-            this.comboBox2.Location = new System.Drawing.Point(486, 285);
+            this.comboBox2.Location = new System.Drawing.Point(398, 285);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 28;

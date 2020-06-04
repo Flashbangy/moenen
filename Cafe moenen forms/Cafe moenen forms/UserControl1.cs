@@ -335,7 +335,7 @@ namespace Cafe_moenen_forms
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
