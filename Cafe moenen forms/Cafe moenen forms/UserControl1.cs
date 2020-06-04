@@ -29,18 +29,18 @@ namespace Cafe_moenen_forms
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
             //label1.Text = textBox1.Text;
             //textBox1.BackColor = Color.FromName("LightBlue");
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void Label4_Click(object sender, EventArgs e)
         {
 
         }
@@ -50,7 +50,7 @@ namespace Cafe_moenen_forms
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void Label6_Click(object sender, EventArgs e)
         {
             
         }
@@ -63,10 +63,10 @@ namespace Cafe_moenen_forms
             string naam = NameInput.Text;
             string nummer = TelefoonNummer.Text;
             Int32.TryParse(nummer, out int telefoonNummer);
-            string tijd = tijdKeuze.Text;
+            string tijd = TijdKeuze.Text;
             Int32.TryParse(tijd, out int tijdkeuze);
             bool binnenBuiten;
-            if (radioButton2.Checked)
+            if (RadioButton2.Checked)
             {
                 binnenBuiten = true;
             }
@@ -74,13 +74,13 @@ namespace Cafe_moenen_forms
             {
                 binnenBuiten = false;
             }
-            if (restaurant.kanIkReserveren(tijdkeuze, binnenBuiten, persoon))
+            if (restaurant.KanIkReserveren(tijdkeuze, binnenBuiten, persoon))
             {
                 restaurant.reserveringen.Add(new ReserverenForms(tijdkeuze, binnenBuiten, persoon, naam, telefoonNummer));
-                label6.Text = "U heeft gereserveerd";
+                Label6.Text = "U heeft gereserveerd";
             } else
             {
-                label6.Text = "U kunt helaas niet reserveren";
+                Label6.Text = "U kunt helaas niet reserveren";
             }
             
             //DataSource = MyList;
@@ -91,7 +91,7 @@ namespace Cafe_moenen_forms
 
         }
 
-        private void tijdKeuze_SelectedIndexChanged(object sender, EventArgs e)
+        private void TijdKeuze_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -101,12 +101,12 @@ namespace Cafe_moenen_forms
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -121,44 +121,44 @@ namespace Cafe_moenen_forms
 
 
         //hieronder staan de functies die checken hoeveel tafels er beschikbaar zijn
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            label2.Text = "0";
-            label7.Text = "0";
-            string testTijd = comboBox1.Text;
+            Label2.Text = "0";
+            Label7.Text = "0";
+            string testTijd = ComboBox1.Text;
             Int32.TryParse(testTijd, out int checkTijd);
 
             bool binnenBuitenCheck = true;
-            int binnenTafels = restaurant.aantalVrijeTafels(checkTijd, binnenBuitenCheck);
-            label2.Text = binnenTafels.ToString();
+            int binnenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            Label2.Text = binnenTafels.ToString();
 
             binnenBuitenCheck = false;
-            int buitenTafels = restaurant.aantalVrijeTafels(checkTijd, binnenBuitenCheck);
-            label7.Text = buitenTafels.ToString();
+            int buitenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            Label7.Text = buitenTafels.ToString();
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void Label7_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             //this.listView1.DataSource = null;
-            this.listView1.Items.Clear();
+            this.ListView1.Items.Clear();
 
-            string checkTijd = comboBox2.Text;
+            string checkTijd = ComboBox2.Text;
             Int32.TryParse(checkTijd, out int ckeckedTijd);
             if (ckeckedTijd == 17)
             {
@@ -180,11 +180,11 @@ namespace Cafe_moenen_forms
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        listView1.Items.Add(tijd);
-                        listView1.Items.Add(binnen);
-                        listView1.Items.Add(personen);
-                        listView1.Items.Add(naam);
-                        listView1.Items.Add(telefoonnummer);
+                        ListView1.Items.Add(tijd);
+                        ListView1.Items.Add(binnen);
+                        ListView1.Items.Add(personen);
+                        ListView1.Items.Add(naam);
+                        ListView1.Items.Add(telefoonnummer);
                     }
                 }
 
@@ -222,11 +222,11 @@ namespace Cafe_moenen_forms
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        listView1.Items.Add(tijd);
-                        listView1.Items.Add(binnen);
-                        listView1.Items.Add(personen);
-                        listView1.Items.Add(naam);
-                        listView1.Items.Add(telefoonnummer);
+                        ListView1.Items.Add(tijd);
+                        ListView1.Items.Add(binnen);
+                        ListView1.Items.Add(personen);
+                        ListView1.Items.Add(naam);
+                        ListView1.Items.Add(telefoonnummer);
                     }
                 }
 
@@ -250,11 +250,11 @@ namespace Cafe_moenen_forms
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        listView1.Items.Add(tijd);
-                        listView1.Items.Add(binnen);
-                        listView1.Items.Add(personen);
-                        listView1.Items.Add(naam);
-                        listView1.Items.Add(telefoonnummer);
+                        ListView1.Items.Add(tijd);
+                        ListView1.Items.Add(binnen);
+                        ListView1.Items.Add(personen);
+                        ListView1.Items.Add(naam);
+                        ListView1.Items.Add(telefoonnummer);
                     }
                 }
 
@@ -278,11 +278,11 @@ namespace Cafe_moenen_forms
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        listView1.Items.Add(tijd);
-                        listView1.Items.Add(binnen);
-                        listView1.Items.Add(personen);
-                        listView1.Items.Add(naam);
-                        listView1.Items.Add(telefoonnummer);
+                        ListView1.Items.Add(tijd);
+                        ListView1.Items.Add(binnen);
+                        ListView1.Items.Add(personen);
+                        ListView1.Items.Add(naam);
+                        ListView1.Items.Add(telefoonnummer);
                     }
                 }
 
@@ -306,11 +306,11 @@ namespace Cafe_moenen_forms
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        listView1.Items.Add(tijd);
-                        listView1.Items.Add(binnen);
-                        listView1.Items.Add(personen);
-                        listView1.Items.Add(naam);
-                        listView1.Items.Add(telefoonnummer);
+                        ListView1.Items.Add(tijd);
+                        ListView1.Items.Add(binnen);
+                        ListView1.Items.Add(personen);
+                        ListView1.Items.Add(naam);
+                        ListView1.Items.Add(telefoonnummer);
                     }
                 }
 
@@ -333,14 +333,34 @@ namespace Cafe_moenen_forms
            // }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void NameInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Telefoon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

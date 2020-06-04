@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
             this.Reserveer = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Label3 = new System.Windows.Forms.Label();
+            this.Label4 = new System.Windows.Forms.Label();
+            this.Label5 = new System.Windows.Forms.Label();
             this.creator_1 = new System.Windows.Forms.Label();
             this.creator_2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tijdKeuze = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.Label6 = new System.Windows.Forms.Label();
+            this.TijdKeuze = new System.Windows.Forms.ComboBox();
+            this.RadioButton1 = new System.Windows.Forms.RadioButton();
+            this.RadioButton2 = new System.Windows.Forms.RadioButton();
             this.AantalMensen = new System.Windows.Forms.NumericUpDown();
             this.NameInput = new System.Windows.Forms.TextBox();
             this.TelefoonNummer = new System.Windows.Forms.TextBox();
             this.Naam = new System.Windows.Forms.Label();
             this.Telefoon = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.Label2 = new System.Windows.Forms.Label();
+            this.Label7 = new System.Windows.Forms.Label();
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.ComboBox2 = new System.Windows.Forms.ComboBox();
+            this.ListView1 = new System.Windows.Forms.ListView();
             this.Tijd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Binnen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Personen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,18 +60,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.AantalMensen)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label1.Location = new System.Drawing.Point(373, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Restaurant Moenen";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.Label1.AutoSize = true;
+            this.Label1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.Label1.Location = new System.Drawing.Point(373, 12);
+            this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(201, 25);
+            this.Label1.TabIndex = 0;
+            this.Label1.Text = "Restaurant Moenen";
+            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Reserveer
             // 
@@ -83,33 +83,35 @@
             this.Reserveer.UseVisualStyleBackColor = true;
             this.Reserveer.Click += new System.EventHandler(this.Reserveer_Click_1);
             // 
-            // label3
+            // Label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Zitplek";
+            this.Label3.AutoSize = true;
+            this.Label3.Location = new System.Drawing.Point(27, 171);
+            this.Label3.Name = "Label3";
+            this.Label3.Size = new System.Drawing.Size(50, 17);
+            this.Label3.TabIndex = 8;
+            this.Label3.Text = "Zitplek";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
-            // label4
+            // Label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 285);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Hoe laat?";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.Label4.AutoSize = true;
+            this.Label4.Location = new System.Drawing.Point(27, 285);
+            this.Label4.Name = "Label4";
+            this.Label4.Size = new System.Drawing.Size(69, 17);
+            this.Label4.TabIndex = 9;
+            this.Label4.Text = "Hoe laat?";
+            this.Label4.Click += new System.EventHandler(this.Label4_Click);
             // 
-            // label5
+            // Label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 226);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Hoeveel mensen?";
+            this.Label5.AutoSize = true;
+            this.Label5.Location = new System.Drawing.Point(27, 226);
+            this.Label5.Name = "Label5";
+            this.Label5.Size = new System.Drawing.Size(122, 17);
+            this.Label5.TabIndex = 10;
+            this.Label5.Text = "Hoeveel mensen?";
+            this.Label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // creator_1
             // 
@@ -129,55 +131,55 @@
             this.creator_2.TabIndex = 12;
             this.creator_2.Text = "Bartek";
             // 
-            // label6
+            // Label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(181, 270);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 17);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "melding";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.Label6.AutoSize = true;
+            this.Label6.Location = new System.Drawing.Point(181, 270);
+            this.Label6.Name = "Label6";
+            this.Label6.Size = new System.Drawing.Size(57, 17);
+            this.Label6.TabIndex = 14;
+            this.Label6.Text = "melding";
+            this.Label6.Click += new System.EventHandler(this.Label6_Click);
             // 
-            // tijdKeuze
+            // TijdKeuze
             // 
-            this.tijdKeuze.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tijdKeuze.FormattingEnabled = true;
-            this.tijdKeuze.Items.AddRange(new object[] {
+            this.TijdKeuze.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TijdKeuze.FormattingEnabled = true;
+            this.TijdKeuze.Items.AddRange(new object[] {
             "17",
             "18",
             "19",
             "20",
             "21"});
-            this.tijdKeuze.Location = new System.Drawing.Point(30, 306);
-            this.tijdKeuze.Name = "tijdKeuze";
-            this.tijdKeuze.Size = new System.Drawing.Size(121, 24);
-            this.tijdKeuze.TabIndex = 15;
-            this.tijdKeuze.SelectedIndexChanged += new System.EventHandler(this.tijdKeuze_SelectedIndexChanged);
+            this.TijdKeuze.Location = new System.Drawing.Point(30, 306);
+            this.TijdKeuze.Name = "TijdKeuze";
+            this.TijdKeuze.Size = new System.Drawing.Size(121, 24);
+            this.TijdKeuze.TabIndex = 15;
+            this.TijdKeuze.SelectedIndexChanged += new System.EventHandler(this.TijdKeuze_SelectedIndexChanged);
             // 
-            // radioButton1
+            // RadioButton1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(109, 191);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(69, 21);
-            this.radioButton1.TabIndex = 16;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Buiten";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.RadioButton1.AutoSize = true;
+            this.RadioButton1.Location = new System.Drawing.Point(109, 191);
+            this.RadioButton1.Name = "RadioButton1";
+            this.RadioButton1.Size = new System.Drawing.Size(69, 21);
+            this.RadioButton1.TabIndex = 16;
+            this.RadioButton1.TabStop = true;
+            this.RadioButton1.Text = "Buiten";
+            this.RadioButton1.UseVisualStyleBackColor = true;
+            this.RadioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // RadioButton2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(30, 191);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 21);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Binnen";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.RadioButton2.AutoSize = true;
+            this.RadioButton2.Location = new System.Drawing.Point(30, 191);
+            this.RadioButton2.Name = "RadioButton2";
+            this.RadioButton2.Size = new System.Drawing.Size(73, 21);
+            this.RadioButton2.TabIndex = 17;
+            this.RadioButton2.TabStop = true;
+            this.RadioButton2.Text = "Binnen";
+            this.RadioButton2.UseVisualStyleBackColor = true;
+            this.RadioButton2.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
             // 
             // AantalMensen
             // 
@@ -193,6 +195,7 @@
             this.NameInput.Name = "NameInput";
             this.NameInput.Size = new System.Drawing.Size(100, 22);
             this.NameInput.TabIndex = 19;
+            this.NameInput.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
             // 
             // TelefoonNummer
             // 
@@ -220,94 +223,95 @@
             this.Telefoon.Size = new System.Drawing.Size(119, 17);
             this.Telefoon.TabIndex = 22;
             this.Telefoon.Text = "Telefoon nummer";
+            this.Telefoon.Click += new System.EventHandler(this.Telefoon_Click);
             // 
-            // button1
+            // Button1
             // 
-            this.button1.Location = new System.Drawing.Point(22, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 26);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Hoeveel tafels beschikbaar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button1.Location = new System.Drawing.Point(22, 14);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(199, 26);
+            this.Button1.TabIndex = 23;
+            this.Button1.Text = "Hoeveel tafels beschikbaar";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label2
+            // Label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(149, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "binnen";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.Label2.AutoSize = true;
+            this.Label2.Location = new System.Drawing.Point(149, 62);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(51, 17);
+            this.Label2.TabIndex = 24;
+            this.Label2.Text = "binnen";
+            this.Label2.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // label7
+            // Label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(201, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "buiten";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.Label7.AutoSize = true;
+            this.Label7.Location = new System.Drawing.Point(201, 62);
+            this.Label7.Name = "Label7";
+            this.Label7.Size = new System.Drawing.Size(47, 17);
+            this.Label7.TabIndex = 25;
+            this.Label7.Text = "buiten";
+            this.Label7.Click += new System.EventHandler(this.Label7_Click);
             // 
-            // comboBox1
+            // ComboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Items.AddRange(new object[] {
             "17",
             "18",
             "19",
             "20",
             "21"});
-            this.comboBox1.Location = new System.Drawing.Point(22, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 26;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ComboBox1.Location = new System.Drawing.Point(22, 59);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(121, 24);
+            this.ComboBox1.TabIndex = 26;
+            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
-            // button2
+            // Button2
             // 
-            this.button2.Location = new System.Drawing.Point(537, 286);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Toon";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Button2.Location = new System.Drawing.Point(537, 286);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(75, 23);
+            this.Button2.TabIndex = 27;
+            this.Button2.Text = "Toon";
+            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // comboBox2
+            // ComboBox2
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox2.FormattingEnabled = true;
+            this.ComboBox2.Items.AddRange(new object[] {
             "17",
             "18",
             "19",
             "20",
             "21"});
-            this.comboBox2.Location = new System.Drawing.Point(398, 285);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 28;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.ComboBox2.Location = new System.Drawing.Point(398, 285);
+            this.ComboBox2.Name = "ComboBox2";
+            this.ComboBox2.Size = new System.Drawing.Size(121, 24);
+            this.ComboBox2.TabIndex = 28;
+            this.ComboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
-            // listView1
+            // ListView1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Tijd,
             this.Binnen,
             this.Personen,
             this.persoonNaam,
             this.Nummer});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(323, 69);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(565, 199);
-            this.listView1.TabIndex = 29;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.ListView1.HideSelection = false;
+            this.ListView1.Location = new System.Drawing.Point(323, 69);
+            this.ListView1.Name = "ListView1";
+            this.ListView1.Size = new System.Drawing.Size(565, 199);
+            this.ListView1.TabIndex = 29;
+            this.ListView1.UseCompatibleStateImageBehavior = false;
+            this.ListView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
             // 
             // Tijd
             // 
@@ -349,30 +353,30 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ListView1);
+            this.Controls.Add(this.ComboBox2);
+            this.Controls.Add(this.Button2);
+            this.Controls.Add(this.ComboBox1);
+            this.Controls.Add(this.Label7);
+            this.Controls.Add(this.Label2);
+            this.Controls.Add(this.Button1);
             this.Controls.Add(this.Telefoon);
             this.Controls.Add(this.Naam);
             this.Controls.Add(this.TelefoonNummer);
             this.Controls.Add(this.NameInput);
             this.Controls.Add(this.AantalMensen);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.tijdKeuze);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.RadioButton2);
+            this.Controls.Add(this.RadioButton1);
+            this.Controls.Add(this.TijdKeuze);
+            this.Controls.Add(this.Label6);
             this.Controls.Add(this.creator_2);
             this.Controls.Add(this.creator_1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Label5);
+            this.Controls.Add(this.Label4);
+            this.Controls.Add(this.Label3);
             this.Controls.Add(this.Reserveer);
             this.Controls.Add(this.Box1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(903, 518);
@@ -385,29 +389,29 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.Button Reserveer;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Label3;
+        private System.Windows.Forms.Label Label4;
+        private System.Windows.Forms.Label Label5;
         private System.Windows.Forms.Label creator_1;
         private System.Windows.Forms.Label creator_2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox tijdKeuze;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label Label6;
+        private System.Windows.Forms.ComboBox TijdKeuze;
+        private System.Windows.Forms.RadioButton RadioButton1;
+        private System.Windows.Forms.RadioButton RadioButton2;
         private System.Windows.Forms.NumericUpDown AantalMensen;
         private System.Windows.Forms.TextBox NameInput;
         private System.Windows.Forms.TextBox TelefoonNummer;
         private System.Windows.Forms.Label Naam;
         private System.Windows.Forms.Label Telefoon;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button Button1;
+        private System.Windows.Forms.Label Label2;
+        private System.Windows.Forms.Label Label7;
+        private System.Windows.Forms.ComboBox ComboBox1;
+        private System.Windows.Forms.Button Button2;
+        private System.Windows.Forms.ComboBox ComboBox2;
+        private System.Windows.Forms.ListView ListView1;
         private System.Windows.Forms.ColumnHeader Tijd;
         private System.Windows.Forms.ColumnHeader Binnen;
         private System.Windows.Forms.ColumnHeader Personen;

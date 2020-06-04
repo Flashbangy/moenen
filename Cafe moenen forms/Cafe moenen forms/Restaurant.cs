@@ -45,7 +45,7 @@ namespace Cafe_moenen_forms
         }
         //Een foreach doen om te checken hoeveel tafels er bezet zijn.
 
-        public int aantalVrijeTafels(int tijdKeuze, bool binnenBuiten)
+        public int AantalVrijeTafels(int tijdKeuze, bool binnenBuiten)
         {
             if (binnenBuiten)
             {
@@ -59,12 +59,12 @@ namespace Cafe_moenen_forms
 
         //Geeft terug hoeveel tafels er vrij zijn en dus of je kunt reserveren.
 
-        public bool kanIkReserveren(int tijdKeuze, bool binnenBuiten, double aantalPers)
+        public bool KanIkReserveren(int tijdKeuze, bool binnenBuiten, double aantalPers)
         {
             double aantalTafelsNodig = Math.Ceiling(aantalPers / 6);
             if (binnenBuiten == true)
             {
-                if (aantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
+                if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
                 {
                     tafelsBezetBinnen += Convert.ToInt32(aantalTafelsNodig);
                     return true;
@@ -77,7 +77,7 @@ namespace Cafe_moenen_forms
             }
             else
             {
-                if (aantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
+                if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
                 {
                     tafelsBezetBuiten += Convert.ToInt32(aantalTafelsNodig);
                     return true;
@@ -89,7 +89,7 @@ namespace Cafe_moenen_forms
             }
         }
 
-        public bool tiendeReservering()
+        public bool TiendeReservering()
         {
             int aantalReserveringen = 0;
             return (reserveringen.Count % 10 == 0);
