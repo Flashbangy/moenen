@@ -77,7 +77,7 @@
             // 
             this.Reserveer.Location = new System.Drawing.Point(184, 307);
             this.Reserveer.Name = "Reserveer";
-            this.Reserveer.Size = new System.Drawing.Size(90, 23);
+            this.Reserveer.Size = new System.Drawing.Size(101, 23);
             this.Reserveer.TabIndex = 6;
             this.Reserveer.Text = "Reserveren";
             this.Reserveer.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(149, 62);
+            this.Label2.Location = new System.Drawing.Point(149, 59);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(51, 17);
             this.Label2.TabIndex = 24;
@@ -248,7 +248,7 @@
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(201, 62);
+            this.Label7.Location = new System.Drawing.Point(225, 59);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(47, 17);
             this.Label7.TabIndex = 25;
@@ -273,11 +273,11 @@
             // 
             // Button2
             // 
-            this.Button2.Location = new System.Drawing.Point(537, 286);
+            this.Button2.Location = new System.Drawing.Point(378, 285);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(75, 23);
+            this.Button2.Size = new System.Drawing.Size(238, 23);
             this.Button2.TabIndex = 27;
-            this.Button2.Text = "Toon";
+            this.Button2.Text = "Toon reserveringen op tijdstip:";
             this.Button2.UseVisualStyleBackColor = true;
             this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -291,7 +291,7 @@
             "19",
             "20",
             "21"});
-            this.ComboBox2.Location = new System.Drawing.Point(398, 285);
+            this.ComboBox2.Location = new System.Drawing.Point(622, 284);
             this.ComboBox2.Name = "ComboBox2";
             this.ComboBox2.Size = new System.Drawing.Size(121, 24);
             this.ComboBox2.TabIndex = 28;

@@ -10,9 +10,16 @@ namespace Cafe_moenen_forms
     {
         public bool Stoppen = false;
 
-        public int Binnentafels { get; set; } = 15;
-
-        public int Buitentafels { get; set; } = 30;
+        public int Binnentafels17 { get; set; } = 15;
+        public int Buitentafels17 { get; set; } = 30;
+        public int Binnentafels18 { get; set; } = 15;
+        public int Buitentafels18 { get; set; } = 30;
+        public int Binnentafels19 { get; set; } = 15;
+        public int Buitentafels19 { get; set; } = 30;
+        public int Binnentafels20 { get; set; } = 15;
+        public int Buitentafels20 { get; set; } = 30;
+        public int Binnentafels21 { get; set; } = 15;
+        public int Buitentafels21 { get; set; } = 30;
 
         public List<ReserverenForms> reserveringen = new List<ReserverenForms>();
 
@@ -22,9 +29,16 @@ namespace Cafe_moenen_forms
 
         //2 integers hierboven zijn alvast gedeclareerd hebben nog niet een waarde.
 
-        public int tafelsBezetBinnen = 0;
-
-        public int tafelsBezetBuiten = 0;
+        public int tafelsBezetBinnen17 = 0;
+        public int tafelsBezetBuiten17 = 0;
+        public int tafelsBezetBinnen18 = 0;
+        public int tafelsBezetBuiten18 = 0;
+        public int tafelsBezetBinnen19 = 0;
+        public int tafelsBezetBuiten19 = 0;
+        public int tafelsBezetBinnen20 = 0;
+        public int tafelsBezetBuiten20 = 0;
+        public int tafelsBezetBinnen21 = 0;
+        public int tafelsBezetBuiten21 = 0;
 
         public Restaurant()
         {
@@ -47,13 +61,60 @@ namespace Cafe_moenen_forms
 
         public int AantalVrijeTafels(int tijdKeuze, bool binnenBuiten)
         {
-            if (binnenBuiten)
+            if (tijdKeuze == 17)
             {
-                return Binnentafels - tafelsBezetBinnen;
+                if (binnenBuiten)
+                {
+                    return Binnentafels17 - tafelsBezetBinnen17;
+                }
+                else
+                {
+                    return Buitentafels17 - tafelsBezetBuiten17;
+                }
+            }
+            else if (tijdKeuze == 18)
+            {
+                if (binnenBuiten)
+                {
+                    return Binnentafels18 - tafelsBezetBinnen18;
+                }
+                else
+                {
+                    return Buitentafels18 - tafelsBezetBuiten18;
+                }
+            }
+            else if (tijdKeuze == 19)
+            {
+                if (binnenBuiten)
+                {
+                    return Binnentafels19 - tafelsBezetBinnen19;
+                }
+                else
+                {
+                    return Buitentafels19 - tafelsBezetBuiten19;
+                }
+            }
+            else if (tijdKeuze == 20)
+            {
+                if (binnenBuiten)
+                {
+                    return Binnentafels20 - tafelsBezetBinnen20;
+                }
+                else
+                {
+                    return Buitentafels20 - tafelsBezetBuiten20;
+                }
             }
             else
             {
-                return Buitentafels - tafelsBezetBuiten;
+                if (binnenBuiten)
+                {
+                    return Binnentafels21 - tafelsBezetBinnen21;
+                }
+                else
+                {
+                    return Buitentafels21 - tafelsBezetBuiten21;
+                }
             }
         }
 
@@ -62,32 +123,145 @@ namespace Cafe_moenen_forms
         public bool KanIkReserveren(int tijdKeuze, bool binnenBuiten, double aantalPers)
         {
             double aantalTafelsNodig = Math.Ceiling(aantalPers / 6);
-            if (binnenBuiten == true)
+            if (tijdKeuze == 17)
             {
-                if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
+                if (binnenBuiten == true)
                 {
-                    tafelsBezetBinnen += Convert.ToInt32(aantalTafelsNodig);
-                    return true;
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
+                    {
+                        tafelsBezetBinnen17 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
 
-                }
-                else //als het niet kan
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
-                {
-                    tafelsBezetBuiten += Convert.ToInt32(aantalTafelsNodig);
-                    return true;
+                    }
+                    else //als het niet kan
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
-                    return false;
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
+                    {
+                        tafelsBezetBuiten17 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            } else if (tijdKeuze == 18)
+            { 
+                if (binnenBuiten == true)
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
+                    {
+                        tafelsBezetBinnen18 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+
+                    }
+                    else //als het niet kan
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
+                    {
+                        tafelsBezetBuiten18 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            } else if (tijdKeuze == 19)
+            {
+                if (binnenBuiten == true)
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
+                    {
+                        tafelsBezetBinnen19 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+
+                    }
+                    else //als het niet kan
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
+                    {
+                        tafelsBezetBuiten19 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            } else if (tijdKeuze == 20)
+            {
+                if (binnenBuiten == true)
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
+                    {
+                        tafelsBezetBinnen20 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+
+                    }
+                    else //als het niet kan
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
+                    {
+                        tafelsBezetBuiten20 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            } else
+            {
+                if (binnenBuiten == true)
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)//als het kan
+                    {
+                        tafelsBezetBinnen21 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+
+                    }
+                    else //als het niet kan
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (AantalVrijeTafels(tijdKeuze, binnenBuiten) >= aantalTafelsNodig)
+                    {
+                        tafelsBezetBuiten21 += Convert.ToInt32(aantalTafelsNodig);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
         }
+    
+
 
         public bool TiendeReservering()
         {
@@ -111,3 +285,4 @@ namespace Cafe_moenen_forms
         //Deze functie geeft door of je de 10 persoon bent die reserveerd, dit is mijn zelfbedachte functie.
     }
 }
+

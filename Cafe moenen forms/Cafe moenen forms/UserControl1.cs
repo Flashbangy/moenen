@@ -130,11 +130,11 @@ namespace Cafe_moenen_forms
 
             bool binnenBuitenCheck = true;
             int binnenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
-            Label2.Text = binnenTafels.ToString();
+            Label2.Text = "binnen: " + binnenTafels.ToString();
 
             binnenBuitenCheck = false;
             int buitenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
-            Label7.Text = buitenTafels.ToString();
+            Label7.Text = "buiten: " + buitenTafels.ToString();
 
         }
 
