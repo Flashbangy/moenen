@@ -44,7 +44,6 @@
             this.TelefoonNummer = new System.Windows.Forms.TextBox();
             this.Naam = new System.Windows.Forms.Label();
             this.Telefoon = new System.Windows.Forms.Label();
-            this.Button1 = new System.Windows.Forms.Button();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label7 = new System.Windows.Forms.Label();
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
@@ -57,6 +56,13 @@
             this.persoonNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nummer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Box1 = new System.Windows.Forms.ListBox();
+            this.Label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Label10 = new System.Windows.Forms.Label();
+            this.Label11 = new System.Windows.Forms.Label();
+            this.Label12 = new System.Windows.Forms.Label();
+            this.Label13 = new System.Windows.Forms.Label();
+            this.Label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AantalMensen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +81,7 @@
             // 
             // Reserveer
             // 
-            this.Reserveer.Location = new System.Drawing.Point(184, 307);
+            this.Reserveer.Location = new System.Drawing.Point(184, 422);
             this.Reserveer.Name = "Reserveer";
             this.Reserveer.Size = new System.Drawing.Size(101, 23);
             this.Reserveer.TabIndex = 6;
@@ -134,11 +140,10 @@
             // Label6
             // 
             this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(181, 270);
+            this.Label6.Location = new System.Drawing.Point(181, 392);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(57, 17);
+            this.Label6.Size = new System.Drawing.Size(0, 17);
             this.Label6.TabIndex = 14;
-            this.Label6.Text = "melding";
             this.Label6.Click += new System.EventHandler(this.Label6_Click);
             // 
             // TijdKeuze
@@ -164,7 +169,6 @@
             this.RadioButton1.Name = "RadioButton1";
             this.RadioButton1.Size = new System.Drawing.Size(69, 21);
             this.RadioButton1.TabIndex = 16;
-            this.RadioButton1.TabStop = true;
             this.RadioButton1.Text = "Buiten";
             this.RadioButton1.UseVisualStyleBackColor = true;
             this.RadioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
@@ -172,6 +176,7 @@
             // RadioButton2
             // 
             this.RadioButton2.AutoSize = true;
+            this.RadioButton2.Checked = true;
             this.RadioButton2.Location = new System.Drawing.Point(30, 191);
             this.RadioButton2.Name = "RadioButton2";
             this.RadioButton2.Size = new System.Drawing.Size(73, 21);
@@ -184,9 +189,20 @@
             // AantalMensen
             // 
             this.AantalMensen.Location = new System.Drawing.Point(31, 246);
+            this.AantalMensen.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.AantalMensen.Name = "AantalMensen";
+            this.AantalMensen.ReadOnly = true;
             this.AantalMensen.Size = new System.Drawing.Size(120, 22);
             this.AantalMensen.TabIndex = 18;
+            this.AantalMensen.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.AantalMensen.ValueChanged += new System.EventHandler(this.AantalMensen_ValueChanged);
             // 
             // NameInput
@@ -199,7 +215,7 @@
             // 
             // TelefoonNummer
             // 
-            this.TelefoonNummer.Location = new System.Drawing.Point(34, 423);
+            this.TelefoonNummer.Location = new System.Drawing.Point(30, 423);
             this.TelefoonNummer.Name = "TelefoonNummer";
             this.TelefoonNummer.Size = new System.Drawing.Size(100, 22);
             this.TelefoonNummer.TabIndex = 20;
@@ -208,7 +224,7 @@
             // Naam
             // 
             this.Naam.AutoSize = true;
-            this.Naam.Location = new System.Drawing.Point(31, 345);
+            this.Naam.Location = new System.Drawing.Point(28, 345);
             this.Naam.Name = "Naam";
             this.Naam.Size = new System.Drawing.Size(45, 17);
             this.Naam.TabIndex = 21;
@@ -218,22 +234,12 @@
             // Telefoon
             // 
             this.Telefoon.AutoSize = true;
-            this.Telefoon.Location = new System.Drawing.Point(31, 403);
+            this.Telefoon.Location = new System.Drawing.Point(27, 403);
             this.Telefoon.Name = "Telefoon";
             this.Telefoon.Size = new System.Drawing.Size(119, 17);
             this.Telefoon.TabIndex = 22;
             this.Telefoon.Text = "Telefoon nummer";
             this.Telefoon.Click += new System.EventHandler(this.Telefoon_Click);
-            // 
-            // Button1
-            // 
-            this.Button1.Location = new System.Drawing.Point(22, 14);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(199, 26);
-            this.Button1.TabIndex = 23;
-            this.Button1.Text = "Hoeveel tafels beschikbaar";
-            this.Button1.UseVisualStyleBackColor = true;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Label2
             // 
@@ -306,7 +312,7 @@
             this.persoonNaam,
             this.Nummer});
             this.ListView1.HideSelection = false;
-            this.ListView1.Location = new System.Drawing.Point(323, 69);
+            this.ListView1.Location = new System.Drawing.Point(323, 79);
             this.ListView1.Name = "ListView1";
             this.ListView1.Size = new System.Drawing.Size(565, 199);
             this.ListView1.TabIndex = 29;
@@ -349,17 +355,87 @@
             this.Box1.TabIndex = 2;
             this.Box1.SelectedIndexChanged += new System.EventHandler(this.Box1_SelectedIndexChanged);
             // 
+            // Label8
+            // 
+            this.Label8.AutoSize = true;
+            this.Label8.Location = new System.Drawing.Point(27, 144);
+            this.Label8.Name = "Label8";
+            this.Label8.Size = new System.Drawing.Size(135, 17);
+            this.Label8.TabIndex = 30;
+            this.Label8.Text = "Reservergin maken:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(179, 17);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Hoeveel tafels beschikbaar";
+            // 
+            // Label10
+            // 
+            this.Label10.AutoSize = true;
+            this.Label10.Location = new System.Drawing.Point(362, 58);
+            this.Label10.Name = "Label10";
+            this.Label10.Size = new System.Drawing.Size(35, 17);
+            this.Label10.TabIndex = 32;
+            this.Label10.Text = "Tijd:";
+            // 
+            // Label11
+            // 
+            this.Label11.AutoSize = true;
+            this.Label11.Location = new System.Drawing.Point(454, 58);
+            this.Label11.Name = "Label11";
+            this.Label11.Size = new System.Drawing.Size(54, 17);
+            this.Label11.TabIndex = 33;
+            this.Label11.Text = "Zitplek:";
+            // 
+            // Label12
+            // 
+            this.Label12.AutoSize = true;
+            this.Label12.Location = new System.Drawing.Point(552, 58);
+            this.Label12.Name = "Label12";
+            this.Label12.Size = new System.Drawing.Size(73, 17);
+            this.Label12.TabIndex = 34;
+            this.Label12.Text = "Personen:";
+            // 
+            // Label13
+            // 
+            this.Label13.AutoSize = true;
+            this.Label13.Location = new System.Drawing.Point(664, 58);
+            this.Label13.Name = "Label13";
+            this.Label13.Size = new System.Drawing.Size(49, 17);
+            this.Label13.TabIndex = 35;
+            this.Label13.Text = "Naam:";
+            // 
+            // Label14
+            // 
+            this.Label14.AutoSize = true;
+            this.Label14.Location = new System.Drawing.Point(735, 58);
+            this.Label14.Name = "Label14";
+            this.Label14.Size = new System.Drawing.Size(119, 17);
+            this.Label14.TabIndex = 36;
+            this.Label14.Text = "Telefoonnummer:";
+            this.Label14.Click += new System.EventHandler(this.Label14_Click);
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Label14);
+            this.Controls.Add(this.Label13);
+            this.Controls.Add(this.Label12);
+            this.Controls.Add(this.Label11);
+            this.Controls.Add(this.Label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Label8);
             this.Controls.Add(this.ListView1);
             this.Controls.Add(this.ComboBox2);
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.ComboBox1);
             this.Controls.Add(this.Label7);
             this.Controls.Add(this.Label2);
-            this.Controls.Add(this.Button1);
             this.Controls.Add(this.Telefoon);
             this.Controls.Add(this.Naam);
             this.Controls.Add(this.TelefoonNummer);
@@ -405,7 +481,6 @@
         private System.Windows.Forms.TextBox TelefoonNummer;
         private System.Windows.Forms.Label Naam;
         private System.Windows.Forms.Label Telefoon;
-        private System.Windows.Forms.Button Button1;
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.Label Label7;
         private System.Windows.Forms.ComboBox ComboBox1;
@@ -418,5 +493,12 @@
         private System.Windows.Forms.ColumnHeader persoonNaam;
         private System.Windows.Forms.ColumnHeader Nummer;
         private System.Windows.Forms.ListBox Box1;
+        private System.Windows.Forms.Label Label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label Label10;
+        private System.Windows.Forms.Label Label11;
+        private System.Windows.Forms.Label Label12;
+        private System.Windows.Forms.Label Label13;
+        private System.Windows.Forms.Label Label14;
     }
 }

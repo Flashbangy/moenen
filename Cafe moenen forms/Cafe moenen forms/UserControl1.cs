@@ -21,7 +21,13 @@ namespace Cafe_moenen_forms
         {
             InitializeComponent();
             Box1.DataSource = restaurant.reserveringen;
-            restaurant.reserveringen.Add(new ReserverenForms(17, true, 10, "test", 0612345678));
+            //restaurant.reserveringen.Add(new ReserverenForms(17, true, 10, "test", 0612345678));
+            TijdKeuze.SelectedIndex = 0;
+            ComboBox1.SelectedIndex = 0;
+            ComboBox2.SelectedIndex = 0;
+            restaurant.KanIkReserveren(17, true, 5);
+            restaurant.reserveringen.Add(new ReserverenForms(17, true, 5, "test", 121256789));
+
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -58,7 +64,9 @@ namespace Cafe_moenen_forms
         //dit is de functie die reserveerd
         private void Reserveer_Click_1(object sender, EventArgs e)
         {
+            //alle informatie word opgehaald en er word gechecked of je kunt reserveren.
             decimal personen = AantalMensen.Value;
+            int persoonchecked = Convert.ToInt32(personen);
             double persoon = Convert.ToDouble(personen);
             string naam = NameInput.Text;
             string nummer = TelefoonNummer.Text;
@@ -66,23 +74,55 @@ namespace Cafe_moenen_forms
             string tijd = TijdKeuze.Text;
             Int32.TryParse(tijd, out int tijdkeuze);
             bool binnenBuiten;
-            if (RadioButton2.Checked)
+            //eerst checken we of alles is ingevuld.
+            if (NameInput.Text == "")
             {
-                binnenBuiten = true;
+                Label6.Text = "vul uw naam in";
             }
             else
             {
-                binnenBuiten = false;
+                if (telefoonNummer.ToString().Length < 9)
+                {
+                    Label6.Text = "telefoonnummer is niet lang genoeg";
+                } else
+                {
+                    //als alles is ingevuld reserveren we.
+
+
+                    if (RadioButton2.Checked)
+                    {
+                        binnenBuiten = true;
+                    }
+                    else
+                    {
+                        binnenBuiten = false;
+                    }
+                    if (restaurant.KanIkReserveren(tijdkeuze, binnenBuiten, persoonchecked))
+                    {
+                        restaurant.reserveringen.Add(new ReserverenForms(tijdkeuze, binnenBuiten, persoonchecked, naam, telefoonNummer));
+                        Label6.Text = "U heeft gereserveerd";
+                    }
+                    else
+                    {
+                        Label6.Text = "U kunt niet reserveren, te weinig tafels";
+                    }
+                }
             }
-            if (restaurant.KanIkReserveren(tijdkeuze, binnenBuiten, persoon))
-            {
-                restaurant.reserveringen.Add(new ReserverenForms(tijdkeuze, binnenBuiten, persoon, naam, telefoonNummer));
-                Label6.Text = "U heeft gereserveerd";
-            } else
-            {
-                Label6.Text = "U kunt helaas niet reserveren";
-            }
-            
+        
+            Label2.Text = "0";
+            Label7.Text = "0";
+            string testTijd = ComboBox1.Text;
+            Int32.TryParse(testTijd, out int checkTijd);
+
+            bool binnenBuitenCheck = true;
+            int binnenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            Label2.Text = "binnen: " + binnenTafels.ToString();
+
+            binnenBuitenCheck = false;
+            int buitenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            Label7.Text = "buiten: " + buitenTafels.ToString();
+
+
             //DataSource = MyList;
         }
 
@@ -93,7 +133,7 @@ namespace Cafe_moenen_forms
 
         private void TijdKeuze_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+       
         }
 
         private void TelefoonNummer_TextChanged(object sender, EventArgs e)
@@ -123,6 +163,23 @@ namespace Cafe_moenen_forms
         //hieronder staan de functies die checken hoeveel tafels er beschikbaar zijn
         private void Button1_Click(object sender, EventArgs e)
         {
+            //Label2.Text = "0";
+            //Label7.Text = "0";
+            //string testTijd = ComboBox1.Text;
+            //Int32.TryParse(testTijd, out int checkTijd);
+
+            //bool binnenBuitenCheck = true;
+            //int binnenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            //Label2.Text = "binnen: " + binnenTafels.ToString();
+
+            //binnenBuitenCheck = false;
+            //int buitenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
+            //Label7.Text = "buiten: " + buitenTafels.ToString();
+
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             Label2.Text = "0";
             Label7.Text = "0";
             string testTijd = ComboBox1.Text;
@@ -135,12 +192,6 @@ namespace Cafe_moenen_forms
             binnenBuitenCheck = false;
             int buitenTafels = restaurant.AantalVrijeTafels(checkTijd, binnenBuitenCheck);
             Label7.Text = "buiten: " + buitenTafels.ToString();
-
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -163,6 +214,7 @@ namespace Cafe_moenen_forms
             if (ckeckedTijd == 17)
             {
                 int geldiger = 17;
+                bool plaatscheck = true;
                 List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
                 foreach (ReserverenForms p in reserveringen)
                 {
@@ -172,19 +224,31 @@ namespace Cafe_moenen_forms
                     ListViewItem naam = new ListViewItem(p.GroepNaam);
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
+                    ListViewItem plaats = new ListViewItem(plaatscheck.ToString());
 
                     if (tijd.ToString() == geldig.ToString())
                     {
+                        if (binnen.ToString() == plaats.ToString())
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("binnen");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        } else
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("buiten");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
 
                         //item.SubItems.Add(p.Binnen.ToString());
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        ListView1.Items.Add(tijd);
-                        ListView1.Items.Add(binnen);
-                        ListView1.Items.Add(personen);
-                        ListView1.Items.Add(naam);
-                        ListView1.Items.Add(telefoonnummer);
+                   
                     }
                 }
 
@@ -205,6 +269,7 @@ namespace Cafe_moenen_forms
             } else if (ckeckedTijd == 18)
             {
                 int geldiger = 18;
+                bool plaatscheck = true;
                 List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
                 foreach (ReserverenForms p in reserveringen)
                 {
@@ -214,25 +279,39 @@ namespace Cafe_moenen_forms
                     ListViewItem naam = new ListViewItem(p.GroepNaam);
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
+                    ListViewItem plaats = new ListViewItem(plaatscheck.ToString());
 
                     if (tijd.ToString() == geldig.ToString())
                     {
+                        if (binnen.ToString() == plaats.ToString())
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("binnen");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
+                        else
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("buiten");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
 
                         //item.SubItems.Add(p.Binnen.ToString());
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        ListView1.Items.Add(tijd);
-                        ListView1.Items.Add(binnen);
-                        ListView1.Items.Add(personen);
-                        ListView1.Items.Add(naam);
-                        ListView1.Items.Add(telefoonnummer);
+
                     }
                 }
 
             } else if (ckeckedTijd == 19)
             {
                 int geldiger = 19;
+                bool plaatscheck = true;
                 List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
                 foreach (ReserverenForms p in reserveringen)
                 {
@@ -242,25 +321,39 @@ namespace Cafe_moenen_forms
                     ListViewItem naam = new ListViewItem(p.GroepNaam);
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
+                    ListViewItem plaats = new ListViewItem(plaatscheck.ToString());
 
                     if (tijd.ToString() == geldig.ToString())
                     {
+                        if (binnen.ToString() == plaats.ToString())
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("binnen");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
+                        else
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("buiten");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
 
                         //item.SubItems.Add(p.Binnen.ToString());
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        ListView1.Items.Add(tijd);
-                        ListView1.Items.Add(binnen);
-                        ListView1.Items.Add(personen);
-                        ListView1.Items.Add(naam);
-                        ListView1.Items.Add(telefoonnummer);
+
                     }
                 }
 
             } else if (ckeckedTijd == 20)
             {
                 int geldiger = 20;
+                bool plaatscheck = true;
                 List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
                 foreach (ReserverenForms p in reserveringen)
                 {
@@ -270,25 +363,39 @@ namespace Cafe_moenen_forms
                     ListViewItem naam = new ListViewItem(p.GroepNaam);
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
+                    ListViewItem plaats = new ListViewItem(plaatscheck.ToString());
 
                     if (tijd.ToString() == geldig.ToString())
                     {
+                        if (binnen.ToString() == plaats.ToString())
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("binnen");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
+                        else
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("buiten");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
 
                         //item.SubItems.Add(p.Binnen.ToString());
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        ListView1.Items.Add(tijd);
-                        ListView1.Items.Add(binnen);
-                        ListView1.Items.Add(personen);
-                        ListView1.Items.Add(naam);
-                        ListView1.Items.Add(telefoonnummer);
+
                     }
                 }
 
             } else
             {
                 int geldiger = 21;
+                bool plaatscheck = true;
                 List<ReserverenForms> reserveringen = restaurant.reserveringen.ToList();
                 foreach (ReserverenForms p in reserveringen)
                 {
@@ -298,19 +405,32 @@ namespace Cafe_moenen_forms
                     ListViewItem naam = new ListViewItem(p.GroepNaam);
                     ListViewItem telefoonnummer = new ListViewItem(p.TelefoonNummer.ToString());
                     ListViewItem geldig = new ListViewItem(geldiger.ToString());
+                    ListViewItem plaats = new ListViewItem(plaatscheck.ToString());
 
                     if (tijd.ToString() == geldig.ToString())
                     {
+                        if (binnen.ToString() == plaats.ToString())
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("binnen");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
+                        else
+                        {
+                            ListView1.Items.Add(tijd);
+                            ListView1.Items.Add("buiten");
+                            ListView1.Items.Add(personen);
+                            ListView1.Items.Add(naam);
+                            ListView1.Items.Add(telefoonnummer);
+                        }
 
                         //item.SubItems.Add(p.Binnen.ToString());
                         //item.SubItems.Add(p.AantalPers.ToString());
                         //item.SubItems.Add(p.GroepNaam);
                         //item.SubItems.Add(p.TelefoonNummer.ToString());
-                        ListView1.Items.Add(tijd);
-                        ListView1.Items.Add(binnen);
-                        ListView1.Items.Add(personen);
-                        ListView1.Items.Add(naam);
-                        ListView1.Items.Add(telefoonnummer);
+
                     }
                 }
 
@@ -359,6 +479,11 @@ namespace Cafe_moenen_forms
         }
 
         private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label14_Click(object sender, EventArgs e)
         {
 
         }

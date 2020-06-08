@@ -23,9 +23,9 @@ namespace Cafe_moenen_forms
 
         public List<ReserverenForms> reserveringen = new List<ReserverenForms>();
 
-        public int aantalTafelsVrij { get; set; } = 0;
+        public int AantalTafelsVrij { get; set; } = 0;
 
-        public int aantalVrijeTafel { get; set; } = 0;
+        public int AantalVrijeTafel { get; set; } = 0;
 
         //2 integers hierboven zijn alvast gedeclareerd hebben nog niet een waarde.
 
@@ -59,6 +59,7 @@ namespace Cafe_moenen_forms
         }
         //Een foreach doen om te checken hoeveel tafels er bezet zijn.
 
+        //Aantalvrijetafels geeft terug hoeveel tafels er niet bezet zijn door van het totale aantal tafels de bezette af te halen.
         public int AantalVrijeTafels(int tijdKeuze, bool binnenBuiten)
         {
             if (tijdKeuze == 17)
@@ -118,7 +119,7 @@ namespace Cafe_moenen_forms
             }
         }
 
-        //Geeft terug hoeveel tafels er vrij zijn en dus of je kunt reserveren.
+        //Geeft terug hoeveel tafels er vrij zijn op het gevraagde moment/plek en dus of je kunt reserveren.
 
         public bool KanIkReserveren(int tijdKeuze, bool binnenBuiten, double aantalPers)
         {
@@ -258,28 +259,6 @@ namespace Cafe_moenen_forms
                         return false;
                     }
                 }
-            }
-        }
-    
-
-
-        public bool TiendeReservering()
-        {
-            int aantalReserveringen = 0;
-            return (reserveringen.Count % 10 == 0);
-
-            foreach (ReserverenForms reservering in reserveringen)
-            {
-                aantalReserveringen += 1;
-            }
-
-            if (reserveringen.Count == 10)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
         //Deze functie geeft door of je de 10 persoon bent die reserveerd, dit is mijn zelfbedachte functie.
