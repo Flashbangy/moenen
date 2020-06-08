@@ -81,11 +81,11 @@ namespace Cafe_moenen_forms
             }
             else
             {
-                if (telefoonNummer.ToString().Length < 9)
-                {
-                    Label6.Text = "telefoonnummer is niet lang genoeg";
-                } else
-                {
+                //if (telefoonNummer.ToString().Length < 9)
+                //{
+                    //Label6.Text = "telefoonnummer is niet lang genoeg";
+                //} else if(telefoonNummer.ToString().Length > 9)
+                //{
                     //als alles is ingevuld reserveren we.
 
 
@@ -106,7 +106,7 @@ namespace Cafe_moenen_forms
                     {
                         Label6.Text = "U kunt niet reserveren, te weinig tafels";
                     }
-                }
+                //}
             }
         
             Label2.Text = "0";
